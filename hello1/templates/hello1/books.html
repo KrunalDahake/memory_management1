@@ -1,0 +1,32 @@
+{% extends 'hello1/base.html'%}
+{% block content %}
+<body>   
+    <main>  
+      <div class="album py-5 bg-light">
+        <div class="container">
+          <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
+            {% for books in books %}
+            <div class="col">
+              <div class="card shadow-sm">
+               <img src="{{books.image.url}}" alt="">
+    
+                <div class="card-body">
+                  <span class="'fw-bold">{{books.auther_name}}</span>
+                  <p class="card-text">{{books.description}}</p>
+                  <span class="fs-5">Rs. {{books.price}}</span>
+                  <div class="d-flex justify-content-between align-items-center">
+                    <div class="btn-group">
+                    </div>
+                  
+                  </div>
+                </div>
+              </div>
+            </div>
+          {% endfor %}
+          </div>
+        </div>
+      </div>
+    
+    </main>       
+      </body>
+{% endblock content %}
